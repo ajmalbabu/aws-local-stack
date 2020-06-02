@@ -1,0 +1,6 @@
+aws:
+  region: us-east-1
+  applicationSqsUrl: http://localhost:4576/queue/application_queue
+  bucketName: application
+  fileObjectKeyPrefix: pay_stub
+  table: applications

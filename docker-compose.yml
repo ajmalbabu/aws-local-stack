@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4567-4584:4567-4584"
+      - "9090:8080"
+    environment:
+      - SERVICES=lambda,sqs,sns,s3
+      - DATA_DIR=/tmp/localstack/data
+      - PORT_WEB_UI=9090
+      - DEBUG=1
+    volumes:
+      - './.localstack:/tmp/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+
+
